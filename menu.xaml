@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="KursachAnna.menu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KursachAnna"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!-- Стиль для TextBlock -->
+        <Style x:Key="ButtonTextStyle" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Opacity" Value="0.8"/>
+            <Setter Property="FontFamily" Value="Oswald"/>
+        </Style>
+    </UserControl.Resources>
+    <Border Background="AliceBlue">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Первая кнопка с изображением и текстом -->
+            <Button Grid.Column="0" Background="Transparent" Click="OpenVsadnikTovarsList">
+                <Grid>
+                    <Image Source="/image/ForVsadnik.jpg"
+                           Stretch="UniformToFill" />
+                    <TextBlock Text="Для всадника"
+                               Style="{StaticResource ButtonTextStyle}" />
+                </Grid>
+            </Button>
+
+            <!-- Вторая кнопка с изображением и текстом -->
+            <Button Grid.Column="1" Background="Transparent" Click="OpenHorseTovarsList">
+                <Grid>
+                    <Image Source="/image/Forhorse.jpg"
+                           Stretch="UniformToFill" />
+                    <TextBlock Text="Для лошади"
+                               Style="{StaticResource ButtonTextStyle}" />
+                </Grid>
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>
